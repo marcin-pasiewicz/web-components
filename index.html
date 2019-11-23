@@ -8,14 +8,16 @@
     <script src="js/tooltip.js"></script>
     <script src="js/confirm.js"></script>
     <script src="js/infoToggle.js"></script>
+    <script src="js/modal.js"></script>
     <style>
-      * {
-        box-sizing: border-box;
-        font-family: sans-serif;
-      }
-      :root {
-        --color-primary: #899bff;
-      }
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        :root {
+            --color-primary: #899bff;
+        }
     </style>
 </head>
 <body>
@@ -30,5 +32,26 @@ are awesome!
 <mp-confirm-link></mp-confirm-link>
 <a is="mp-confirm-link" href="https://google.com">Google</a>
 <mp-info-toggle is-visible="true">This works!</mp-info-toggle>
+<mp-modal>
+    <h1 slot="title">Please confirm</h1>
+    <p>With your confirmation you agree to pay full amount</p>
+</mp-modal>
+<p>Please confirm your choice</p>
+<button>Show details & confirm</button>
+<script>
+    const confirmButton = document.querySelector('button');
+    const modal = document.querySelector('mp-modal');
+    modal.addEventListener('confirm', () => {
+        console.log('confirmed...')
+    })
+    modal.addEventListener('cancel', () => {
+        console.log('canceled...')
+    })
+    confirmButton.addEventListener('click', () => {
+        if(!modal.isOpen) {
+            modal.open()
+        }
+    })
+</script>
 </body>
 </html>
