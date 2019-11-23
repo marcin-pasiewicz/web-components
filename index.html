@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/tooltip.js"></script>
+    <script src="js/confirm.js"></script>
+    <script src="js/infoToggle.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      :root {
+        --color-primary: #899bff;
+      }
+    </style>
+</head>
+<body>
+<p>
+    <mp-tooltip class="important" text="Web Components is a set of standards">
+        <span class="highlight">Web Components</span>
+    </mp-tooltip>
+    are awesome!
+</p>
+<mp-tooltip text="Web Components is a set of standards"></mp-tooltip>
+are awesome!
+<mp-confirm-link></mp-confirm-link>
+<a is="mp-confirm-link" href="https://google.com">Google</a>
+<mp-info-toggle is-visible="true">This works!</mp-info-toggle>
+</body>
+</html>
